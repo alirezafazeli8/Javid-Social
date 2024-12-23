@@ -19,4 +19,8 @@ from django.contrib import admin
 from django.urls import path
 import a_posts.views as a_posts_views
 
-urlpatterns = [path("admin/", admin.site.urls), path("", a_posts_views.home_view)]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", a_posts_views.home_view, name="home"),
+    path("post/create/", a_posts_views.create_post_view, name="create-post-url"),
+]
